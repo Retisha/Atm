@@ -4,33 +4,33 @@ class Atm:
         self.pin = pin
 
     def balanceInquiry(self):
-        print('your balance is: $500')
+        print('Your balance is: $500')
 
     def cashWithdrawal(self, amount):
         latest_amount = 500-amount
-        print('you withdrawed: $' + str(amount) +
-              ' your remaining balance is: $' + str(latest_amount))
+        print('You withdrawed: $' + str(amount) +
+              ' Your remaining balance is: $' + str(latest_amount))
 
 
 def main():
-    name = input('please enter your name: ')
-    print('welcome, ' + name)
-    cn = input('enter your card number: ')
-    pn = input(' please enter your pin: ')
+    name = input('Please enter your name: ')
+    print('Welcome, ' + name)
+    cn = input('Please enter your card number: ')
+    pn = input(' Please enter your pin: ')
     current_user = Atm(cn, pn)
 
-    print('select transaction:')
+    print('Select Transaction:')
     print('1: Balance Inquiry')
     print('2: Cash Withdrawal')
-    transaction = int(input('select transaction choice: '))
+    transaction = int(input('Select transaction choice: '))
 
     if(transaction == 1):
         current_user.balanceInquiry()
     elif(transaction == 2):
-        amount = int(input('enter amount: '))
+        amount = int(input('Enter amount: '))
         current_user.cashWithdrawal(amount)
     else:
-        print('kindly enter a valid option(number)')
+        print('Kindly enter a valid option(number)')
 
 
 if __name__ == '__main__':
