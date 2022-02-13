@@ -1,3 +1,7 @@
+from email import charset
+from xml.dom.minidom import CharacterData
+
+
 class Atm:
     def __init__(self, cardNumber, pin):
         self.cardNumber = cardNumber
@@ -13,10 +17,12 @@ class Atm:
 
 
 def main():
-    name = input('Please enter your name: ')
+    name = charset(input('Please enter your name: '))
     print('Welcome, ' + name)
-    cn = input('Please enter your card number: ')
-    pn = input(' Please enter your pin: ')
+
+    cn = int(input('Please enter your card number: '))
+
+    pn = int(input(' Please enter your pin: '))
     current_user = Atm(cn, pn)
 
     print('Select Transaction:')
